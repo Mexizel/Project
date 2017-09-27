@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Brain Buzz</title>
+    <link rel="stylesheet" type="text/css" href="./css/cssreset.css">
+    <link rel="stylesheet" type="text/css" href="./css/MainPage.css">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+
+      <div class="headerSection">
+        <button id="startButton" type="button" name="button">Start The Game</button>
+        <p>Score :<span id="scoreplace"></span></p>
+        <h1>BRAIN BUZZzzz!</h1>
+      </div>
+
+      <div class="questionSection">
+        <h2>Question</h2>
+        <p id="questions"></p>
+      </div>
+
+      <div class="answerSection">
+       <h3>Answers</h3>
+        <button class="myButton" id="answer1"></button>
+        <button class="myButton" id="answer2"></button>
+        <button class="myButton" id="answer3"></button>
+        <button class="myButton" id="answer4"></button>
+      </div>
+
+        <!--
+      <button class="Buzz" type="button" name="button">BUZzz</button>
+
+      <div class="player">
+        <div class="user one">Player #1</div>
+        <div class="user two">Player #2</div>
+        <div class="user three">Player #3</div>
+        <div class="user four">Player #4</div>
+      </div>
+    -->
+
+    </div>
+    <script>
+        function fetchQuestion () {
+
+            $.get("http://localhost:5200/getQuestion", function(data, status){
+
+            if (data.question == undefined) {
+              alert("THE GAME IS OVER");
+              return;
+            }
+
+            $("#questions").text(data.question);
+            $("#answer1").text(data.answers[0]);
+            $("#answer2").text(data.answers[1]);
+            $("#answer3").text(data.answers[2]);
+            $("#answer4").text(data.answers[3]);
+          });
+        };
+
+        $("#startButton").click(function() {
+          $.post("http://localhost:5200/startNewGame", function(data, status) {
+            updateScore();
+            fetchQuestion();
+          });
+        });
+
+        $("#answer1").click(function() {
+          postAnswer(1);
+        });
+        $("#answer2").click(function() {
+          postAnswer(2);
+        });
+        $("#answer3").click(function() {
+          postAnswer(3);
+        });
+        $("#answer4").click(function() {
+          postAnswer(4);
+        });
+
+        function postAnswer(answerNumber)
+        {
+          $.post("http://localhost:5200/postAnswer", {answer: answerNumber}, function(data, status) {
+
+              if (data.isCorrect == undefined) {
+                alert("THE GAME IS OVER");
+                return;
+              }
+
+              if (data.isCorrect == true) {
+                alert("Correct");
+                              }
+              else {
+                alert("Not correct");
+              }
+              updateScore();
+              fetchQuestion();
+          });
+        }
+
+
+        function updateScore() {
+          $.get("http://localhost:5200/getScore", function(data, status){
+            document.getElementById("scoreplace").innerHTML  = data.playerScore;
+          });
+        };
+
+    </script>
+
+  </body>
+</html>

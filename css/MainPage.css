@@ -1,0 +1,148 @@
+
+body {
+}
+
+.wrapper {
+  width:75%;
+  height:650px;
+  background-color:#D3D3D3;
+  margin: 0 auto;
+  border:solid #483D8B;
+  box-sizing: border-box;
+  margin-top: 1em;
+}
+
+.headerSection {
+  overflow: hidden;
+  clear: both;
+}
+
+.headerSection a {
+  text-decoration: none;
+  font-size: 1.4em;
+  color: white;
+  font-weight: bold;
+}
+
+.headerSection #bePlayerButton {
+  background-color:#43D1AF;
+  margin-top: 0.5em;
+  padding: 1%;
+  float: right;
+}
+
+.headerSection #startButton {
+  margin-top: 0.5em;
+  background-color:#B22222;
+  font-size: 1.2em;
+  padding: 1%;
+  color: white;
+  font-weight: bold;
+  float: left;
+}
+
+.headerSection p {
+  margin-left: 0.2%;
+  margin-top: 6%;
+  background-color:#483D8B;
+  font-size: 1.5em;
+  padding: 1%;
+  color: white;
+  font-weight: bold;
+  clear: both;
+  display: block;
+  width: 15%;
+}
+
+.headerSection h1 {
+  font-family: Lobster, Monospace;
+  font-size: 3em;
+  margin: 1em auto;
+  text-align: center;
+  color: #483D8B;
+}
+
+.questionSection {
+  width:75%;
+  height:20%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.questionSection h2 {
+  text-decoration: underline;
+  font-family: Lobster, Monospace;
+  font-size: 2.5em;
+  text-align: center;
+  color: #43D1AF;
+}
+
+.questionSection #questions {
+  margin-top: 4%;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.answerSection {
+  height: 25%;
+  text-align: center;
+}
+
+.answerSection h3 {
+  text-decoration: underline;
+  font-family: Lobster, Monospace;
+  font-size: 2.5em;
+  color: #43D1AF;
+  margin-bottom: 5%;
+}
+
+.answerSection .myButton {
+  background: #483D8B;
+  width: 45%;
+  height: 40%;
+  display: inline-block;
+  margin: 1%;
+  font-size: 1.6em;
+  color: white;
+}
+
+.answerSection .myButton:hover {
+  font-size: 1.8em;
+  -webkit-box-shadow: 10px 10px 6px -6px #777777;
+  -moz-box-shadow: 10px 10px 6px -6px #777777;
+  box-shadow: 10px 10px 6px -6px #777777;
+}
+/*
+.player {
+  text-align: center;
+}
+
+ .player .user {
+  width:15%;
+  height:50px;
+  border: #43D1AF solid 0.2em;
+  margin-left: 1em;
+  margin-top: 2em;
+  display: inline-block;
+}
+
+
+.Buzz {
+width: 20%;
+height: 20%;
+border-radius: 50%;
+font-size: 2.0em;
+font-size: 2.0em;
+font-weight: bold;
+display: block;
+margin: 0 auto;
+background-color: BLUEVIOLET;
+color: rgba(0,63,71,1);
+border-color: rgba(0,63,71,.2);
+}
+
+
+
+
+*/

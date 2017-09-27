@@ -1,0 +1,11 @@
+{
+  "name": "BrainBuzzServer",
+  "version": "1.0.0",
+  "author": "Suzi Devidas",
+  "description": "A game server",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "mongodb": "^2.2.31"
+  }
+}
